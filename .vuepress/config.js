@@ -2,6 +2,7 @@ const moment = require("moment");
 module.exports = {
   "title": "huawink",
   "description": "一个博客项目",
+  "base":"/huawink-/",
   "dest": "public",
   "head": [
     [
@@ -21,6 +22,7 @@ module.exports = {
   ],
   "theme": "reco",
   "themeConfig": {
+	  
     "nav": [
 	    {
       text: "留言板",
@@ -48,6 +50,10 @@ module.exports = {
 		  {
             "text": "后端",
             "link": "/docs/theme-back/"
+          },
+		  		  {
+            "text": "面试",
+            "link": "/docs/face-test/"
           }
         ]
       },
@@ -97,14 +103,15 @@ module.exports = {
         "link": "https://vuepress-theme-reco.recoluan.com"
       }
     ],
-    "logo": "/logo.png",
+    "logo": "/LOGO.jpg",
     "search": true,
     "searchMaxSuggestions": 10,
     "lastUpdated": "Last Updated",
     "author": "huawink",
     "authorAvatar": "/6e264f2185b6afa0c275d4637d8eabb1.jpg",
     "record": "xxxx",
-    "startYear": "2017"
+    "startYear": "2017",
+	"subSidebar": 'auto'
   },
   "markdown": {
     "lineNumbers": true
@@ -118,6 +125,14 @@ module.exports = {
         zIndex: 999999999           // z-index property of the canvas, default: 999999999
       }
 	],
+	//PWA插件
+	['@vuepress/pwa', {
+        serviceWorker: true,
+        updatePopup: {
+            message: "发现新内容可用",
+            buttonText: "刷新"
+        }
+    }],
 	
 	
 	

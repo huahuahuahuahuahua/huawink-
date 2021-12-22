@@ -1,4 +1,3 @@
-```markdown
 ---
 title: 留言板
 date: 2020-10-15
@@ -7,5 +6,5 @@ subSidebar: false
 isShowComments: true
 ---
 
-## 欢迎大家在此留下你的建议和意见
-```
+## 欢迎在此留下您的想法
+
