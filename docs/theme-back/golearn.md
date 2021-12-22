@@ -1,11 +1,14 @@
-# 
+---
+title: go语言学习
+date: 2021-12-11
+tags:
+ - 后端
+ - go
+categories:
+ -  2021
+---
 
-```markdown
-title: go
-date: 2020-05-28
-```
-
-# go
+# go:grinning:
 
 一招完美解决vscode安装go插件失败问题
 

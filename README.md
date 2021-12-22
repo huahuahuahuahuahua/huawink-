@@ -2,7 +2,7 @@
 home: true
 heroText: 欢迎您来
 tagline: 海边松枝乱，月光洒梢头，老鹤松枝齐鸣
-# heroImage: /hero.png
+heroImage: /hero1.jpg
 # heroImageStyle: {
 #   maxWidth: '600px',
 #   width: '100%',
@@ -11,17 +11,13 @@ tagline: 海边松枝乱，月光洒梢头，老鹤松枝齐鸣
 #   background: '#fff',
 #   borderRadius: '1rem',
 # }
-bgImageStyle: {
-  height: '450px'
-}
+#bgImageStyle: {
+#  height: '450px'
+#}
 isShowTitleInHome: false
 actionText: Guide
 actionLink: /views/other/guide
 features:
-- title: Yesterday
-  details: 开发一款看着开心、写着顺手的 vuepress 博客主题
-- title: Today
-  details: 希望帮助更多的人花更多的时间在内容创作上，而不是博客搭建上
-- title: Tomorrow
-  details: 希望更多的爱好者能够参与进来，帮助这个主题更好的成长
+- title: descriptions
+  details: 开发基于vuepress框架的huawink专属博客
 ---
