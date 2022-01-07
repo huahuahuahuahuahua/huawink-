@@ -2,7 +2,7 @@ const moment = require("moment");
 module.exports = {
   "title": "huawink",
   "description": "一个博客项目",
-  "base":"/huawink-/",
+	"base":"/huawink/",
   "dest": "public",
   "head": [
     [
@@ -22,7 +22,7 @@ module.exports = {
   ],
   "theme": "reco",
   "themeConfig": {
-	  
+
     "nav": [
 	    {
       text: "留言板",
@@ -71,12 +71,14 @@ module.exports = {
 
   ],
     "sidebar": {
-      "/docs/theme-reco/": [
+      
+	  "/docs/theme-back/": [
         "",
         "theme",
         "plugin",
         "api"
       ]
+	  
     },
     "type": "blog",
     "blogConfig": {
@@ -133,9 +135,7 @@ module.exports = {
             buttonText: "刷新"
         }
     }],
-	
-	
-	
+
     // 自动生成侧边栏的插件
     [
       "vuepress-plugin-auto-sidebar",
@@ -145,6 +145,9 @@ module.exports = {
         },
       },
     ],
+
+
+
     // 文章最后更新时间转换
     [
       "@vuepress/last-updated",
