@@ -2,7 +2,7 @@ const moment = require("moment");
 module.exports = {
   "title": "huawink",
   "description": "一个博客项目",
-	"base":"/huawink/",
+	"base":"/huawink-/",
   "dest": "public",
   "head": [
     [
@@ -71,14 +71,12 @@ module.exports = {
 
   ],
     "sidebar": {
-      
-	  "/docs/theme-back/": [
+	  "/docs/theme-reco/": [
         "",
         "theme",
         "plugin",
         "api"
       ]
-	  
     },
     "type": "blog",
     "blogConfig": {
@@ -145,8 +143,6 @@ module.exports = {
         },
       },
     ],
-
-
 
     // 文章最后更新时间转换
     [
