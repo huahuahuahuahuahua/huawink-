@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CommonJS模块 | huawink</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/huawink-/favicon.ico">
+    <meta name="description" content="一个博客项目">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/huawink-/assets/css/0.styles.199fbbe3.css" as="style"><link rel="preload" href="/huawink-/assets/js/app.3aacfd90.js" as="script"><link rel="preload" href="/huawink-/assets/js/3.ee31ba41.js" as="script"><link rel="preload" href="/huawink-/assets/js/1.3a84ebb9.js" as="script"><link rel="preload" href="/huawink-/assets/js/22.6b589ebf.js" as="script"><link rel="preload" href="/huawink-/assets/js/9.724b2d6f.js" as="script"><link rel="prefetch" href="/huawink-/assets/js/10.eddf6c6b.js"><link rel="prefetch" href="/huawink-/assets/js/11.1d29931b.js"><link rel="prefetch" href="/huawink-/assets/js/12.812baf57.js"><link rel="prefetch" href="/huawink-/assets/js/13.3d8a8a70.js"><link rel="prefetch" href="/huawink-/assets/js/14.132ed842.js"><link rel="prefetch" href="/huawink-/assets/js/15.5eed6434.js"><link rel="prefetch" href="/huawink-/assets/js/16.85803b52.js"><link rel="prefetch" href="/huawink-/assets/js/17.3ff4a893.js"><link rel="prefetch" href="/huawink-/assets/js/18.57bb1084.js"><link rel="prefetch" href="/huawink-/assets/js/19.a590910f.js"><link rel="prefetch" href="/huawink-/assets/js/20.fb9c394b.js"><link rel="prefetch" href="/huawink-/assets/js/21.a41cb629.js"><link rel="prefetch" href="/huawink-/assets/js/23.df521f3a.js"><link rel="prefetch" href="/huawink-/assets/js/24.885853a1.js"><link rel="prefetch" href="/huawink-/assets/js/25.f5f0deb4.js"><link rel="prefetch" href="/huawink-/assets/js/26.209fd055.js"><link rel="prefetch" href="/huawink-/assets/js/27.3f29158c.js"><link rel="prefetch" href="/huawink-/assets/js/28.5e990187.js"><link rel="prefetch" href="/huawink-/assets/js/29.f121b08d.js"><link rel="prefetch" href="/huawink-/assets/js/30.9ae1eb2d.js"><link rel="prefetch" href="/huawink-/assets/js/31.4d64d6ad.js"><link rel="prefetch" href="/huawink-/assets/js/32.04665432.js"><link rel="prefetch" href="/huawink-/assets/js/33.dda6d141.js"><link rel="prefetch" href="/huawink-/assets/js/4.a2c345bc.js"><link rel="prefetch" href="/huawink-/assets/js/5.c619cb1b.js"><link rel="prefetch" href="/huawink-/assets/js/6.b0b02ed5.js"><link rel="prefetch" href="/huawink-/assets/js/7.1fd2a429.js"><link rel="prefetch" href="/huawink-/assets/js/8.151b82b2.js">
+    <link rel="stylesheet" href="/huawink-/assets/css/0.styles.199fbbe3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-1aefc0b4><div data-v-1aefc0b4><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1aefc0b4 data-v-1aefc0b4><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>huawink</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>一个博客项目</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>huawink</span>
+            
+          <span data-v-25ba6db2>2017 - </span>
+          2022
+        </a></span></div></div> <div class="hide" data-v-1aefc0b4><header class="navbar" data-v-1aefc0b4><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/huawink-/" class="home-link router-link-active"><img src="/huawink-/LOGO.jpg" alt="huawink" class="logo"> <span class="site-name">huawink</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/huawink-/messageboard.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/huawink-/categories/2021/" class="nav-link"><i class="undefined"></i>
+  2021
+</a></li><li class="dropdown-item"><!----> <a href="/huawink-/categories/2022/" class="nav-link"><i class="undefined"></i>
+  2022
+</a></li></ul></div></div><div class="nav-item"><a href="/huawink-/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/huawink-/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><a href="/huawink-/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      笔记
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/huawink-/docs/frontend/" class="nav-link router-link-active"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/huawink-/docs/frontback-go/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/huawink-/docs/face-interview/" class="nav-link"><i class="undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/huawink-/docs/block-chain/" class="nav-link"><i class="undefined"></i>
+  区块链
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/huahuahuahuahuahua" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-1aefc0b4></div> <aside class="sidebar" data-v-1aefc0b4><div class="personal-info-wrapper" data-v-39576ba9 data-v-1aefc0b4><img src="/huawink-/6e264f2185b6afa0c275d4637d8eabb1.jpg" alt="author-avatar" class="personal-img" data-v-39576ba9> <h3 class="name" data-v-39576ba9>
+    huawink
+  </h3> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>20</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>12</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/huawink-/messageboard.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/huawink-/categories/2021/" class="nav-link"><i class="undefined"></i>
+  2021
+</a></li><li class="dropdown-item"><!----> <a href="/huawink-/categories/2022/" class="nav-link"><i class="undefined"></i>
+  2022
+</a></li></ul></div></div><div class="nav-item"><a href="/huawink-/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/huawink-/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><a href="/huawink-/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      笔记
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/huawink-/docs/frontend/" class="nav-link router-link-active"><i class="undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/huawink-/docs/frontback-go/" class="nav-link"><i class="undefined"></i>
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/huawink-/docs/face-interview/" class="nav-link"><i class="undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/huawink-/docs/block-chain/" class="nav-link"><i class="undefined"></i>
+  区块链
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/huahuahuahuahuahua" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>2021</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/huawink-/docs/frontend/2021/" aria-current="page" class="sidebar-link">2021前端学习</a></li><li><a href="/huawink-/docs/frontend/2021/ASTTransfeRender.html" class="sidebar-link">AST语法树转render函数</a></li><li><a href="/huawink-/docs/frontend/2021/CommonJSAndES6.html" class="sidebar-link">CommonJS模块与ES6模块的区别</a></li><li><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html" aria-current="page" class="active sidebar-link">CommonJS模块</a></li><li><a href="/huawink-/docs/frontend/2021/CompositionAPI.html" class="sidebar-link">Composition API</a></li><li><a href="/huawink-/docs/frontend/2021/ReactHouseProject.html" class="sidebar-link">react租房项目</a></li><li><a href="/huawink-/docs/frontend/2021/createElement.html" class="sidebar-link">createElement 用法</a></li><li><a href="/huawink-/docs/frontend/2021/frontDesignDocument.html" class="sidebar-link">如何编写前端设计文档？</a></li><li><a href="/huawink-/docs/frontend/2021/gitbookintroduction.html" class="sidebar-link">/docs/frontend/2021/gitbookintroduction.html</a></li><li><a href="/huawink-/docs/frontend/2021/vueSupermallProject.html" class="sidebar-link">vue商城项目</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-1aefc0b4><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>CommonJS模块</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><span data-v-25ba6db2>huawink</span>
+            
+          <span data-v-25ba6db2>2017 - </span>
+          2022
+        </a></span></div></div> <div data-v-1aefc0b4><main class="page"><section><div class="page-title"><h1 class="title">CommonJS模块</h1> <div data-v-f875f3fc><i class="iconfont reco-account" data-v-f875f3fc><span data-v-f875f3fc>huawink</span></i> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>11/11/2020</span></i> <!----> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>前端</span><span class="tag-item" data-v-f875f3fc>node</span></i></div></div> <div class="theme-reco-content content__default"><h1 id="commonjs模块"><a href="#commonjs模块" class="header-anchor">#</a> CommonJS模块</h1> <h2 id="一、出发点"><a href="#一、出发点" class="header-anchor">#</a> 一、出发点</h2> <p>主要是为了弥补当前JS没有标准的缺陷，以达到像Python、Ruby和Java具备开发大型应用的基础能力。CommonJS API是以在浏览器环境之外构建 JS 生态系统为目标而产生的项目，比如服务器端JS应用程序、命令行工具、桌面图形界面应用程序等。如今，规范涵盖了模块、二进制、Buffer、字符集编码、I/O流、进程环境、文件系统、套接字，单元测试、Web服务器网管接口、包管理等。</p> <h2 id="二、commonjs的模块规范"><a href="#二、commonjs的模块规范" class="header-anchor">#</a> 二、CommonJS的模块规范</h2> <p>CommonJS对模块的定义主要分为模块引用、模块定义和模块标识3个部分</p> <h3 id="_1-模块引用"><a href="#_1-模块引用" class="header-anchor">#</a> 1. 模块引用</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>var math = require('math')
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>在CommonJS规范中，存在一个<code>require()</code>方法，这个方法接收模块标识，一次引入一个模块的API到当前上下文中。</p> <h3 id="_2-模块定义"><a href="#_2-模块定义" class="header-anchor">#</a> 2. 模块定义</h3> <p>在模块中，上下文提供<code>require()</code>方法引入外部模块。对应引入的功能，上下文提供一个<code>exports</code>对象导出当前模块的方法或变量，并且它是唯一的导出出口，同时模块中还存在一个<code>module</code>对象，它代表的是当前模块，<code>exports</code>是<code>module</code>的属性。所以，在Node中，一个文件就是一个模块，将方法或属性挂载在<code>exports</code>对象上作为属性即可定义导出的方式。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// math.js
+exports.add = function () {
+    var sum = 0,
+        i = 0,
+        args = arguments,
+        l = args.length
+    while (i &lt; 1) {
+        sum += args[i++]
+    }
+    return sum
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>在其他文件中，通过<code>require()</code>方法引入模块</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// program.js
+var math = require('math')
+exports.increment =  function (val) {
+    return math.add(val, 1)
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="_3-模块标识"><a href="#_3-模块标识" class="header-anchor">#</a> 3. 模块标识</h3> <p>模块标识就是传递给<code>require()</code>方法的参数，采用小驼峰命名，或者以<code>.</code>、<code>..</code>开头的相对路径或绝对路径。它可以不加文件后缀.js。</p> <p><a href="https://camo.githubusercontent.com/0c9466611aa3d73e93b4ac28e21b6aa04800e4a1b038697431e64105a00d764c/68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f32303138313231313136313032363133392e706e67" target="_blank" rel="noopener noreferrer"><img src="https://camo.githubusercontent.com/0c9466611aa3d73e93b4ac28e21b6aa04800e4a1b038697431e64105a00d764c/68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f32303138313231313136313032363133392e706e67" alt="在这里插入图片描述"><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+CommonJS对模块的定义意义主要在于将类聚的方法或变量等限定在私有的作用域内，同时支持引入和导出功能以顺畅的连接上下游依赖。</p> <ul><li>模块内所有的变量或方法都运行在模块作用域内，不会污染全局作用域</li> <li>模块可以多次加载，但每次加载只会运行一次，并将运行结果缓存，以待下次使用，如果想要模块再次运行，则需要清除缓存</li> <li>模块加载顺序和代码运行顺序一致</li></ul> <p>CommonJS构建的这套模块导出或引用机制使得用户完全不必考虑变量污染，命名空间等方案与之相比相形见绌。</p> <h2 id="三、module-对象"><a href="#三、module-对象" class="header-anchor">#</a> 三、module 对象</h2> <h3 id="_1-module"><a href="#_1-module" class="header-anchor">#</a> 1.module</h3> <p>通常一个<code>module</code>有以下几个属性</p> <ul><li><p>module.id 模块的识别符，通常是带有绝对路径的模块文件名</p></li> <li><p>module.filename 模块文件名，带有绝对路径</p></li> <li><p>module.loaded 返回一个boolean值，标识模块是否已经加载完成</p></li> <li><p>module.parent 返回调用该模块的对象</p></li> <li><p>module.children 返回该模块调用的其他模块数组</p></li> <li><p>module.exports 返回该模块对外的输出</p></li> <li><p>module.paths 模块的搜索路径</p> <p>例如：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// math.js
+exports.add = function () {
+    var sum = 0,
+        i = 0,
+        args = arguments,
+        l = args.length
+    while (i &lt; 1) {
+        sum += args[i++]
+    }
+    return sum
+}
+console.log(module)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>它的输出是:</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Module {
+  id: '/Users/a123/Desktop/Study/wx/server/math.js',
+  exports: { add: [Function] },
+  parent: 
+   Module {
+     id: '.',
+     exports: {},
+     parent: null,
+     filename: '/Users/a123/Desktop/Study/wx/server/app.js',
+     loaded: false,
+     children: [ [Module], [Module], [Module], [Module], [Module], [Circular] ],
+     paths: 
+      [ '/Users/a123/Desktop/Study/wx/server/node_modules',
+        '/Users/a123/Desktop/Study/wx/node_modules',
+        '/Users/a123/Desktop/Study/node_modules',
+        '/Users/a123/Desktop/node_modules',
+        '/Users/a123/node_modules',
+        '/Users/node_modules',
+        '/node_modules' ] },
+  filename: '/Users/a123/Desktop/Study/wx/server/math.js',
+  loaded: false,
+  children: [],
+  paths: 
+   [ '/Users/a123/Desktop/Study/wx/server/node_modules',
+     '/Users/a123/Desktop/Study/wx/node_modules',
+     '/Users/a123/Desktop/Study/node_modules',
+     '/Users/a123/Desktop/node_modules',
+     '/Users/a123/node_modules',
+     '/Users/node_modules',
+     '/node_modules' ] }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>当 Node.js 直接运行一个文件时，<code>require.main</code> 会被设为它的 <code>module</code>。 这意味着可以通过 <code>require.main === module</code> 来判断一个文件是否被直接运行：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// node app.js
+math---require.main === module :  false
+app---require.main === module :  true
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li></ul> <h3 id="_2-module-exports"><a href="#_2-module-exports" class="header-anchor">#</a> 2. module.exports</h3> <p>module.exports 对象是由模块系统创建的，表示当前文件对外输出的接口。</p> <p><strong>注意，对 <code>module.exports</code> 的赋值必须立即完成。 不能在任何回调中完成。</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 创建a.js文件
+const EventEmitter = require('events')
+module.exports = new EventEmitter() // 赋值
+// 处理一些工作，并在一段时间后从模块自身触发 'ready' 事件。
+setTimeout(() =&gt; {
+    module.exports.emit('ready')
+}, 1000)
+// 创建b.js文件
+setTimeout(() =&gt; {
+    module.exports = {a: 'hello'}
+}, 0)
+// app.js 文件中分别调用a、b模块
+
+// 引入a模块
+const a = require('./a')
+a.on('ready', () =&gt; {
+    console.log('模块 a 已准备好')
+})
+
+// 引入b模块
+const b = require('./b')
+console.log(b.a)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>执行app.js结果是：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>undefined
+模块 a 已准备好
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="_3-exports"><a href="#_3-exports" class="header-anchor">#</a> 3. exports</h3> <p><code>exports</code> 变量是在模块的文件级别作用域内有效的，它在模块被执行前被赋予 <code>module.exports</code> 的值。</p> <p>例如： <code>module.exports.fun = …</code>，相当于<code>exports.fun = ...</code></p> <p><strong>但注意，不能将一个值赋值给<code>exports</code>，这样它将不在绑定到<code>module.exports</code></strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>module.exports.hello = true; // 从对模块的引用中导出
+exports = { hello: false };  // 不导出，只在模块内有效
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="_4-module-exports与exports"><a href="#_4-module-exports与exports" class="header-anchor">#</a> 4. module.exports与exports</h3> <p>在上述介绍中，<code>module.exports</code> 与<code>exports</code>很容易混淆，下面介绍<code>module.exports</code> 与<code>exports</code>内部的实现：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 1. 模块引用
+var module = require('./a')
+module.a // 重要的是 module 这里，module 是 Node 独有的一个变量
+
+// 2. 模块定义
+module.exports = {
+    a: 1
+}
+
+// 3.模块内部实现
+function require(/* ... */) {
+  const module = {
+    exports: {} // exports 就是一个空对象
+  }
+  // 这里其实就是包装了一层立即执行函数，这样就不会污染全局变量了
+  ((module, exports) =&gt; {
+    // 模块代码在这
+    var a = 1  // 如果定义了一个函数。则为 function someFunc() {}
+    exports = a;
+    // 此时，exports 不再是一个 module.exports 的快捷方式，
+    // 且这个模块依然导出一个空的默认对象。
+    module.exports = a; // 这个是为什么 exports 和 module.exports 用法相似的原因
+    // 此时，该模块导出 a，而不是默认对象。
+  })(module, module.exports);
+  return module.exports;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h2 id="四、require"><a href="#四、require" class="header-anchor">#</a> 四、require</h2> <p><code>require</code>命令的功能是，引入模块。</p> <p><code>require</code>命令用于加载文件，后缀名默认为<code>.js</code>。</p> <p><code>require</code>的加载顺序是：</p> <ul><li><p>以<code>/</code>开头，加载绝对路径模块文件</p></li> <li><p>以<code>./</code>开头，加载相对路径模块文件</p></li> <li><p>除以上两种情况外，加载的是一个默认提供的核心模块（位于Node的系统安装目录中），或者一个位于各级node_modules目录的已安装模块（全局安装或局部安装）。</p> <p>举例来说，脚本/Users/a123/projects/foo.js<code>执行了</code>require('bar.js')`命令，Node会依次搜索以下文件。</p> <ul><li>/usr/local/lib/node/bar.js</li> <li>/Users/a123/projects/node_modules/bar.js</li> <li>/Users/a123/node_modules/bar.js</li> <li>/Users/node_modules/bar.js</li> <li>/node_modules/bar.js</li></ul></li> <li><p>如果指定的模块文件没有发现，Node会尝试为文件名添加<code>.js</code>、<code>.json</code>、<code>.node</code>后，再去搜索。<code>.js</code>件会以文本格式的JavaScript脚本文件解析，<code>.json</code>文件会以JSON格式的文本文件解析，<code>.node</code>文件会以编译后的二进制文件解析。</p></li> <li><p>如果想得到<code>require</code>命令加载的确切文件名，使用<code>require.resolve()</code>方法。</p></li></ul> <p>通常，我们会把相关的文件放在一个目录里面，便于组织，这就需要给该目录设置一个入口文件，可以让<code>require</code>方法通过这个入口文件，加载整个目录，例如<code>package.json</code>：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>{
+    &quot;name&quot;: &quot;wx_backend&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;description&quot;: &quot;&quot;,
+    &quot;main&quot;: &quot;app.js&quot;,
+    &quot;scripts&quot;: {
+        &quot;start:node-dev&quot;: &quot;pm2 start process.prod.json --no-daemon  --env development&quot;,
+        &quot;start:node-prod&quot;: &quot;pm2 start process.prod.json --no-daemon  --env production&quot;,
+        &quot;dev&quot;: &quot;nodemon --config nodemon.json app.js&quot;,
+        &quot;initdb&quot;: &quot;npm install &amp;&amp; node tools/initdb.js&quot;
+    },
+...
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p><code>require</code>发现参数字符串指向一个目录时，就会自动查看该目录下的<code>package.json</code>文件，然后加载<code>main</code>指定的入口文件，如果<code>package.json</code>中没有<code>main</code>字段，或者根本没有<code>package.json</code>文件，则会加载该目录下的<code>index.js</code>文件或<code>index.node</code>文件。</p> <p><a href="https://nodejs.org/api/modules.html" target="_blank" rel="noopener noreferrer">具体可查阅nodeJS<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="五、扩展"><a href="#五、扩展" class="header-anchor">#</a> 五、扩展</h2> <p>前后端 JS 分别搁置在 HTTP 的两端，它们扮演的角色不同，侧重点也不一样。 <strong>浏览器端的 JS 需要经历从一个服务器端分发到多个客户端执行，而服务器端 JS 则是相同的代码需要多次执行。前者的瓶颈在于宽带，后者的瓶颈则在于 CPU 等内存资源。前者需要通过网络加载代码，后者则需要从磁盘中加载，</strong> 两者的加载速度也不是在一个数量级上的。
+纵观 Node 的模块引入过程，几乎全都是同步的，尽管与 Node 强调异步的行为有些相反，但它是合理的，但前端如果也用同步方式引入，试想一下，在 UI 加载的过程中需要花费很多时间来等待脚本加载完成，这会造成用户体验的很大问题。
+鉴于网络的原因， CommonJS 为后端 JS 制定的规范并不完全适合与前端的应用场景，下面来介绍 JS 前端的规范。</p> <h3 id="_1-amd"><a href="#_1-amd" class="header-anchor">#</a> 1. AMD</h3> <p>AMD是由RequireJS提出的，相对于CommonJS同步加载来说，AMD是&quot;Asynchronous Module Definition&quot;（异步模块定义）的缩写。是为浏览器环境专门设计的。</p> <p>RequireJS即为遵循AMD规范的模块化工具。 RequireJS的基本思想是，通过一个函数来将所有所需要的或者说所依赖的模块实现装载进来，然后返回一个新的函数（模块），我们所有的关于新模块的业务代码都在这个函数内部操作，其内部也可无限制的使用已经加载进来的以来的模块。</p> <p><strong>define(id?, dependencies?, factory)</strong></p> <ul><li>id 为字符串类型，表示了模块标识，为可选参数。若不存在则模块标识应该默认定义为在加载器中被请求脚本的标识。如果存在，那么模块标识必须为顶层的或者一个绝对的标识。 第</li> <li>dependencies ，是一个当前模块依赖的，已被模块定义的模块标识的数组字面量。</li> <li>factory，是一个需要进行实例化的函数或者一个对象。</li></ul> <ol><li><p>定义模块</p> <ul><li><p>定义无依赖模块</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>define( {
+    sum : function( x, y ){
+        return x + y ;
+    }
+} );
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li> <li><p>定义有依赖模块</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>define([&quot;some&quot;], function( alpha ){
+    return {
+        add : function(){
+            return some.sum() + 1 ;
+        }
+    }
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div></li> <li><p>定义数据对象模块</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>define({
+    add: [],
+    sub: []
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></li> <li><p>具名模块</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>define(&quot;alpha&quot;, [ &quot;require&quot;, &quot;exports&quot;, &quot;beta&quot; ], function( require, exports, beta ){
+    export.verb = function(){
+        return beta.verb();
+        // or:
+        return require(&quot;beta&quot;).verb();
+    }
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div></li> <li><p>包装模块</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>define(function(require, exports, module) {
+    var a = require('a'),
+          b = require('b');
+
+    exports.action = function() {};
+} );
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>不考虑多了一层函数外，格式和Node.js是一样的：使用require获取依赖模块，使用exports导出API。</p> <p>除了define外，AMD还保留一个关键字require。require 作为规范保留的全局标识符，可以实现为 module loader，也可以不实现。</p></li></ul></li> <li><p>模块加载</p> <p><strong>require([module], callback)</strong></p> <ul><li>[module]：是一个数组，里面的成员就是要加载的模块</li> <li>callback：是模块加载完成之后的回调函数</li> <li>require方法允许添加第三个参数，即错误处理的回调函数。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>require(['math'], function(math) {
+　math.add(2, 3);
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div></li></ol> <h3 id="_2-cmd"><a href="#_2-cmd" class="header-anchor">#</a> 2. CMD</h3> <p>CMD 的规范由国内的玉伯提出，与 AMD 的区别主要在于 <strong>定义模块与依赖引入</strong> 的部分。</p> <ol><li><p>CMD 更接近与 Node 对 CommonJS 规范的定义：</p> <p><strong>define(factory)</strong></p></li> <li><p>在依赖部分，CMD 支持动态引入</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>define(function(require, exports, module) {
+    // 模块内容
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>require、exports、module 通过形参传递给模块，在需要依赖模块时，可以通过 <code>require()</code> 引入。</p></li></ol> <h3 id="_3-es6-模块化"><a href="#_3-es6-模块化" class="header-anchor">#</a> 3. ES6 模块化</h3> <p>ES6正式提出了内置的模块化语法。</p> <p>ES6 的模块自动采用严格模式，不管你有没有在模块头部加上<code>&quot;use strict&quot;;</code>。</p> <p>模块功能主要由两个命令构成：<code>export</code>和<code>import</code>。<code>export</code>命令用于规定模块的对外接口，<code>import</code>命令用于输入其他模块提供的功能。</p> <ol><li><p>export</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//导出变量
+export var a = 1;
+
+//导出函数
+export function fun(){
+   ...
+}
+
+//导出类
+export class Rectangle {
+    ...
+}
+
+function fun1() { ... }
+function fun2() { ... }
+//导出对象，即导出引用
+export {fun1 as f1, fun2 as f2} // 重命名模块
+
+// 导出默认值
+export default function fun3() { ... }
+
+// 错误, 后面不能跟变量声明语句。
+export default var a = 1
+
+// 正确                                
+export default 42
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p>另外，<code>export</code>语句输出的接口，与其对应的值是动态绑定关系，即通过该接口，可以取到模块内部实时的值。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>export var foo = 'bar';
+setTimeout(() =&gt; foo = 'baz', 500);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>上面代码输出变量<code>foo</code>，值为<code>bar</code>，500毫秒之后变成<code>baz</code>。</p></li> <li><p>import</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 第一组 example.js
+export default function fun() { // 输出
+  // ...
+}
+// app.js
+import fun from './example';
+
+// 第二组 example.js
+export function fun() { // 输出
+  // ...
+};
+// app.js
+import {fun} from './example'; // 输入
+// 或
+import * as allFun from './example';
+//allFun.fun
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p><code>export default</code>命令用于指定模块的默认输出。显然，一个模块只能有一个默认输出，因此<code>export default</code>命令只能使用一次。所以，<code>import</code>命令后面才不用加大括号，因为只可能对应一个方法。</p> <p>本质上，<code>export default</code>就是输出一个叫做<code>default</code>的变量或方法，然后系统允许你为它取任意名字。所以，下面的写法是有效的。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// modules.js
+function fun() {
+  ...
+}
+export {fun as default};
+// 等同于
+// export default fun;
+
+// app.js
+import { default as fun } from './modules';
+// 等同于
+// import fun from 'modules';
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div></li> <li><p><code>CommonJS</code>和ES6中模块化的两者区别</p> <ul><li>前者支持动态导入，也就是 <code>require(${path}/xx.js)</code>，后者目前不支持，但是已有提案</li> <li>前者是同步导入，因为用于服务端，文件都在本地，同步导入即使卡住主线程影响也不大。而后者是异步导入，因为用于浏览器，需要下载文件，如果也采用同步导入会对渲染有很大影响</li> <li>前者在导出时都是值拷贝，就算导出的值变了，导入的值也不会改变，所以如果想更新值，必须重新导入一次。但是后者采用实时绑定的方式，导入导出的值都指向同一个内存地址，所以导入值会跟随导出值变化</li> <li>后者会编译成 <code>require/exports</code> 来执行的</li></ul></li></ol></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2022-07-02 01:47:55</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/huawink-/docs/frontend/2021/CommonJSAndES6.html" class="prev">
+            CommonJS模块与ES6模块的区别
+          </a></span> <span class="next"><a href="/huawink-/docs/frontend/2021/CompositionAPI.html">
+            Composition API
+          </a></span></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-cb1513f6><li class="level-2" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#一、出发点" class="sidebar-link reco-side-一、出发点" data-v-cb1513f6>一、出发点</a></li><li class="level-2" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#二、commonjs的模块规范" class="sidebar-link reco-side-二、commonjs的模块规范" data-v-cb1513f6>二、CommonJS的模块规范</a></li><li class="level-3" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#_1-模块引用" class="sidebar-link reco-side-_1-模块引用" data-v-cb1513f6>1. 模块引用</a></li><li class="level-3" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#_2-模块定义" class="sidebar-link reco-side-_2-模块定义" data-v-cb1513f6>2. 模块定义</a></li><li class="level-3" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#_3-模块标识" class="sidebar-link reco-side-_3-模块标识" data-v-cb1513f6>3. 模块标识</a></li><li class="level-2" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#三、module-对象" class="sidebar-link reco-side-三、module-对象" data-v-cb1513f6>三、module 对象</a></li><li class="level-3" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#_1-module" class="sidebar-link reco-side-_1-module" data-v-cb1513f6>1.module</a></li><li class="level-3" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#_2-module-exports" class="sidebar-link reco-side-_2-module-exports" data-v-cb1513f6>2. module.exports</a></li><li class="level-3" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#_3-exports" class="sidebar-link reco-side-_3-exports" data-v-cb1513f6>3. exports</a></li><li class="level-3" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#_4-module-exports与exports" class="sidebar-link reco-side-_4-module-exports与exports" data-v-cb1513f6>4. module.exports与exports</a></li><li class="level-2" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#四、require" class="sidebar-link reco-side-四、require" data-v-cb1513f6>四、require</a></li><li class="level-2" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#五、扩展" class="sidebar-link reco-side-五、扩展" data-v-cb1513f6>五、扩展</a></li><li class="level-3" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#_1-amd" class="sidebar-link reco-side-_1-amd" data-v-cb1513f6>1. AMD</a></li><li class="level-3" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#_2-cmd" class="sidebar-link reco-side-_2-cmd" data-v-cb1513f6>2. CMD</a></li><li class="level-3" data-v-cb1513f6><a href="/huawink-/docs/frontend/2021/CommonJSSummary.html#_3-es6-模块化" class="sidebar-link reco-side-_3-es6-模块化" data-v-cb1513f6>3. ES6 模块化</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><canvas id="vuepress-canvas-cursor"></canvas><!----><APlayer audio="" fixed="true" mini="true" autoplay="autoplay" theme="#f9bcdd" loop="loop" order="random" preload="auto" volume="0.1" mutex="true" lrc-type="0" list-folded="true" list-max-height="250" storage-name="vuepress-plugin-meting" id="aplayer-fixed"></APlayer></div></div>
+    <script src="/huawink-/assets/js/app.3aacfd90.js" defer></script><script src="/huawink-/assets/js/3.ee31ba41.js" defer></script><script src="/huawink-/assets/js/1.3a84ebb9.js" defer></script><script src="/huawink-/assets/js/22.6b589ebf.js" defer></script><script src="/huawink-/assets/js/9.724b2d6f.js" defer></script>
+  </body>
+</html>
